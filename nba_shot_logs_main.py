@@ -36,9 +36,3 @@ def count_incorrect_three_pointers(dataframe):
 incorrect_threes = count_incorrect_three_pointers(df)
 print(f"Number of 3-point shots taken from less than 22 feet: {incorrect_threes}")
 #print(df[(df['PTS_TYPE'] == 3) & (df['SHOT_DIST'] < 22)])
-#problem2: Missing data in SHOT_CLOCK
-#count(df[is.na(df$SHOT_CLOCK),])
-#problem3: Missing data in CLOSEST_DEFENDER
-#count(df[is.na(df$CLOSEST_DEFENDER),])
-#problem4: Inconsistent data in CLOSEST_DEFENDER_PLAYER_ID
-#length(unique(df$CLOSEST_DEFENDER_PLAYER_ID))

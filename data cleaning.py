@@ -151,7 +151,7 @@ plt.tight_layout()
 plt.show()
 #so fgm and shot_Result represent same result we can drop fgm.
 #also fgm should represent success shots of the player in the game but our data show missing or made so we can drop it.
-df.drop('FGM', axis=1)
+df = df.drop('FGM', axis=1)
 print("\nAfter dropping FGM column:")
 print(df.head())
 
@@ -183,3 +183,4 @@ df = df_clean
 
 ##after all cleaning print first 5 records
 print("\nFirst 5 records of cleaned dataset:", df.head())
+print(df.dtypes)
