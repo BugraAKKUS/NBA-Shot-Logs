@@ -13,6 +13,7 @@ df = kagglehub.dataset_load(
     "dansbecker/nba-shot-logs",
     file_path
 )
+before_cleaning=len(df)
 #problem1 Short shots incorrectly labeled as 3 Pointers? Vice-versa? and 2 pointers mislabeled as 3 pointers
 # try KNNImputer, IterativeImputer.(hatali labellarin KNNImputer, IterativeImputer ile duzeltilmesi icin diger 
 # degidkenlerle iliskili olmasi lazim o ilikilere bak eger yuksekse bunu aciklayarak kullan)
@@ -184,3 +185,7 @@ df = df_clean
 ##after all cleaning print first 5 records
 print("\nFirst 5 records of cleaned dataset:", df.head())
 print(df.dtypes)
+after_cleaning=len(df)
+print(f"\nTotal records before cleaning: {before_cleaning}")
+print(f"Total records after cleaning: {after_cleaning}")
+print(f"Total records removed during cleaning: {before_cleaning - after_cleaning}")
