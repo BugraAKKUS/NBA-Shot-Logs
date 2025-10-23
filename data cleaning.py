@@ -13,6 +13,7 @@ df = kagglehub.dataset_load(
     "dansbecker/nba-shot-logs",
     file_path
 )
+
 before_cleaning=len(df)
 #problem1 Short shots incorrectly labeled as 3 Pointers? Vice-versa? and 2 pointers mislabeled as 3 pointers
 # try KNNImputer, IterativeImputer.(hatali labellarin KNNImputer, IterativeImputer ile duzeltilmesi icin diger 
@@ -108,10 +109,7 @@ df.rename(columns={'GAME_CLOCK':'GAME_CLOCK_SEC'}, inplace=True)
 print("\nAfter converting GAME_CLOCK to seconds:")
 print(df['GAME_CLOCK_SEC'].head())
 
-# Problem 4: shot_result to binary
-# ...existing code...
-
-# Problem 4: Convert SHOT_RESULT to binary (1 for made, 0 for missed)
+# Problem 4: convert shot_result to binary
 print("\nBefore converting SHOT_RESULT:")
 print(df['SHOT_RESULT'].value_counts())
 
@@ -155,9 +153,6 @@ plt.show()
 df = df.drop('FGM', axis=1)
 print("\nAfter dropping FGM column:")
 print(df.head())
-
-#problem 5: negative touch time values
-# ...existing code...
 
 # Problem 5: Check for negative touch times
 print("\nAnalyzing TOUCH_TIME:")
