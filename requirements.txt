@@ -1,0 +1,8 @@
+pandas
+numpy
+kagglehub
+seaborn
+matplotlib
+scikit-learn
+xgboost
+category_encoders
